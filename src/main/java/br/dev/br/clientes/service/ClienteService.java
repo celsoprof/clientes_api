@@ -28,6 +28,7 @@ public class ClienteService {
     }
 
     public Cliente update(Cliente cliente){
+        System.out.println(cliente);
         return clienteRepository.save(cliente);
     }
 
