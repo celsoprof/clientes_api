@@ -27,4 +27,12 @@ public class ClienteService {
         return cliente.orElse(null);
     }
 
+    public Cliente update(Cliente cliente){
+        return clienteRepository.save(cliente);
+    }
+
+    public void delete(Cliente cliente){
+        clienteRepository.delete(cliente);
+    }
+
 }

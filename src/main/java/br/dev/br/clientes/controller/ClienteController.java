@@ -37,5 +37,16 @@ public class ClienteController {
         return ResponseEntity.created(null).body(cliente);
     }
 
+    @DeleteMapping("/clientes")
+    public ResponseEntity<?> delete(@RequestBody Cliente cliente){
+        clienteService.delete(cliente);
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/clientes")
+    public ResponseEntity<Cliente> update(Cliente cliente){
+        Cliente clienteNovo = clienteService.update(cliente);
+        return ResponseEntity.ok(clienteNovo);
+    }
 
 }
